@@ -10,7 +10,7 @@ const LoginPage = () => {
   const { data } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
-      axios.get("http://localhost:3000/api/users").then((res) => res.data),
+      axios.get("https://back.appointment.dusanprogram.eu/api/users").then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,

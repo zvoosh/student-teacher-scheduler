@@ -15,7 +15,7 @@ const ApprovePage = () => {
     queryKey: ["appointments"],
     queryFn: () =>
       axios
-        .get("http://localhost:3000/api/appointments")
+        .get("https://back.appointment.dusanprogram.eu/api/appointments")
         .then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
@@ -24,7 +24,7 @@ const ApprovePage = () => {
 
   const mutation = useMutation({
     mutationFn: (id) => {
-      return axios.delete(`http://localhost:3000/api/appointments/${id}`);
+      return axios.delete(`https://back.appointment.dusanprogram.eu/api/appointments/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries("appointments");
@@ -43,7 +43,7 @@ const ApprovePage = () => {
 
   const approveMutation = useMutation({
     mutationFn: (id) => {
-      return axios.put(`http://localhost:3000/api/approve/appointment/${id}`);
+      return axios.put(`https://back.appointment.dusanprogram.eu/api/approve/appointment/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries("appointments");

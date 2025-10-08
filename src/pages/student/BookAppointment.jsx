@@ -20,7 +20,7 @@ const BookAppoitment = () => {
   const { data } = useQuery({
     queryKey: ["teacher"],
     queryFn: () =>
-      axios.get("http://localhost:3000/api/teacher").then((res) => res.data),
+      axios.get("https://back.appointment.dusanprogram.eu/api/teacher").then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -29,7 +29,7 @@ const BookAppoitment = () => {
   const mutation = useMutation({
     mutationFn: (appointment) => {
       return axios.post(
-        "http://localhost:3000/api/student-appointments",
+        "https://back.appointment.dusanprogram.eu/api/student-appointments",
         appointment
       );
     },

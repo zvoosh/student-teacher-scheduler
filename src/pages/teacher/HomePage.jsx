@@ -42,7 +42,7 @@ const HomePage = () => {
   const { data } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
-      axios.get("http://localhost:3000/api/users").then((res) => res.data),
+      axios.get("https://back.appointment.dusanprogram.eu/api/users").then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -51,7 +51,7 @@ const HomePage = () => {
   const mutation = useMutation({
     mutationFn: (appointment) => {
       return axios.post(
-        "http://localhost:3000/api/teacher-appointments",
+        "https://back.appointment.dusanprogram.eu/api/teacher-appointments",
         appointment
       );
     },

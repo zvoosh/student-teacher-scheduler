@@ -27,7 +27,7 @@ const TeachersPage = () => {
   const { data } = useQuery({
     queryKey: ["teachers"],
     queryFn: () =>
-      axios.get("http://localhost:3000/api/teacher").then((res) => res.data),
+      axios.get("https://back.appointment.dusanprogram.eu/api/teacher").then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -41,7 +41,7 @@ const TeachersPage = () => {
 
   const mutation = useMutation({
     mutationFn: (teacher) => {
-      return axios.post("http://localhost:3000/api/teachers", teacher);
+      return axios.post("https://back.appointment.dusanprogram.eu/api/teachers", teacher);
     },
     onSuccess: () => {
       notification.success({
@@ -62,7 +62,7 @@ const TeachersPage = () => {
   const editMutation = useMutation({
     mutationFn: (teacher) => {
       return axios.put(
-        `http://localhost:3000/api/teachers/${teacher.uid}`,
+        `https://back.appointment.dusanprogram.eu/api/teachers/${teacher.uid}`,
         teacher
       );
     },
@@ -84,7 +84,7 @@ const TeachersPage = () => {
 
   const deleteMutation = useMutation({
     mutationFn: (uid) => {
-      return axios.delete(`http://localhost:3000/api/user/${uid}`);
+      return axios.delete(`https://back.appointment.dusanprogram.eu/api/user/${uid}`);
     },
     onSuccess: () => {
       notification.success({

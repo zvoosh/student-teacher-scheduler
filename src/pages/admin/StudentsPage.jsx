@@ -11,7 +11,7 @@ const StudentsPage = () => {
   const { data } = useQuery({
     queryKey: ["activeusers"],
     queryFn: () =>
-      axios.get("http://localhost:3000/api/users").then((res) => res.data),
+      axios.get("https://back.appointment.dusanprogram.eu/api/users").then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -19,7 +19,7 @@ const StudentsPage = () => {
 
   const deleteMutation = useMutation({
     mutationFn: (uid) => {
-      return axios.delete(`http://localhost:3000/api/user/${uid}`);
+      return axios.delete(`https://back.appointment.dusanprogram.eu/api/user/${uid}`);
     },
     onSuccess: () => {
       notification.success({
@@ -38,7 +38,7 @@ const StudentsPage = () => {
   const editMutation = useMutation({
     mutationFn: (student) => {
       return axios.put(
-        `http://localhost:3000/api/approve/student/${student.uid}`,
+        `https://back.appointment.dusanprogram.eu/api/approve/student/${student.uid}`,
         student
       );
     },

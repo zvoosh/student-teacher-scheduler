@@ -11,7 +11,7 @@ const RegisterPage = () => {
 
   const mutation = useMutation({
     mutationFn: (user) => {
-      return axios.post("http://localhost:3000/api/users", user);
+      return axios.post("https://back.appointment.dusanprogram.eu/api/users", user);
     },
     onSuccess: (response) => {
       const user = response.data;
