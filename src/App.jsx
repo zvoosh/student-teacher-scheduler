@@ -1,5 +1,16 @@
 import { Route, Routes } from "react-router";
-import { AboutPage, Auth, LoginPage, RegisterPage } from "./pages";
+import {
+  HomePage,
+  Auth,
+  LoginPage,
+  RegisterPage,
+  MessagePage,
+  ApprovePage,
+  AppointmentsPage,
+  TeachersPage,
+  StudentsPage,
+  BookAppoitment,
+} from "./pages";
 import { NotFoundPage, PageLayout, ProtectedRoute } from "./components";
 
 function App() {
@@ -18,7 +29,13 @@ function App() {
             </ProtectedRoute>
           }
         >
-          <Route path="about" element={<AboutPage />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="approve" element={<ApprovePage />} />
+          <Route path="message" element={<MessagePage />} />
+          <Route path="appointments" element={<AppointmentsPage />} />
+          <Route path="teachers" element={<TeachersPage />} />
+          <Route path="students" element={<StudentsPage />} />
+          <Route path="book/appointment" element={<BookAppoitment />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

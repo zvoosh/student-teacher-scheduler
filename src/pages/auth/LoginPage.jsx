@@ -3,7 +3,6 @@ import { Button, Col, Form, Input, notification, Row } from "antd";
 import axios from "axios";
 import { Link, useNavigate } from "react-router";
 
-
 const LoginPage = () => {
   const [loginForm] = Form.useForm();
   const navigate = useNavigate();
@@ -29,7 +28,15 @@ const LoginPage = () => {
         description: `Welcome back, ${matchedUser.username}`,
       });
       sessionStorage.setItem("logedInUser", JSON.stringify(matchedUser));
-      navigate("/page/about");
+      if (matchedUser.role == "teacher") {
+        navigate("/page/home");
+      }
+      if (matchedUser.role == "admin") {
+        navigate("/page/teachers");
+      }
+      if (matchedUser.role == "student") {
+        navigate("/page/teachers");
+      }
     } else {
       notification.error({
         message: "Error while loging in!",
@@ -39,7 +46,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="w-1/2 h-scren bg-gray-800 text-white !p-5 overflow-hidden">
+    <div className="w-full xl:w-1/2 2xl:w-1/2 h-1/2 xl:h-screen 2xl:h-screen bg-gray-800 text-white !p-5 overflow-hidden">
       <h2 className="text-2xl font-bold !mb-5 text-center">Login</h2>
       {/* Login Form */}
       <div className="w-full h-full flex justify-center items-center">
@@ -81,7 +88,7 @@ const LoginPage = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Row justify={"end"} className="!mt-5 flex items-center">
+          <Row justify={"end"} className="!mb-5 flex items-center">
             <Link className="!mr-5" to={"/register"}>
               Register
             </Link>

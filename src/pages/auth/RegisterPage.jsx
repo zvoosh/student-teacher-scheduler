@@ -23,7 +23,7 @@ const RegisterPage = () => {
         description: "Welcome in!",
       });
       queryClient.invalidateQueries("users");
-      navigate("/page/about");
+      navigate("/");
     },
     onError: () => {
       notification.error({
@@ -34,11 +34,13 @@ const RegisterPage = () => {
   });
 
   const onFinish = (values) => {
+    console.log("vales", values);
     mutation.mutate(values);
+    registerForm.resetFields();
   };
 
   return (
-    <div className="w-1/2 h-scren bg-gray-800 text-white !p-5 overflow-hidden">
+    <div className="w-full xl:w-1/2 2xl:w-1/2 h-screen bg-gray-800 text-white !p-5 overflow-hidden overflow-y-auto md:overflow-y-hidden">
       <h2 className="text-2xl font-bold !mb-5 text-center">Register</h2>
       <div className="w-full h-full flex justify-center items-center">
         <Form
@@ -48,8 +50,9 @@ const RegisterPage = () => {
           wrapperCol={{ span: 16 }}
           autoComplete="off"
           onFinish={onFinish}
+          className="flex flex-col items-center"
         >
-          <Row justify="center" gutter={[12, 12]}>
+          <Row justify="center" gutter={[4, 4]} className="w-3/5">
             <Col span={24}>
               <Form.Item
                 name={"username"}
@@ -114,14 +117,54 @@ const RegisterPage = () => {
                 />
               </Form.Item>
             </Col>
-          </Row>
-          <Row justify={"end"} className="!mt-5 flex items-center">
-            <Link className="!mr-5" to={"/"}>
-              Login
-            </Link>
-            <Button type="primary" htmlType="submit">
-              Register
-            </Button>
+
+            <Col span={24}>
+              <Form.Item
+                name={"age"}
+                label={<span className="text-white text-xl">Age</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your age",
+                  },
+                ]}
+              >
+                <Input placeholder="Your age..." />
+              </Form.Item>
+            </Col>
+            <Col span={24}>
+              <Form.Item
+                name={"education"}
+                label={<span className="text-white text-xl">Education</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your education",
+                  },
+                ]}
+              >
+                <Select
+                  className="w-full"
+                  placeholder="Select your education level..."
+                  options={[
+                    { value: "PhD", label: "Doctorate" },
+                    { value: "Ms", label: "Master's" },
+                    { value: "Bs", label: "Bachelor's" },
+                    { value: "Hs", label: "High School" },
+                    { value: "Es", label: "Elementary School" },
+                    { value: "none", label: "None" },
+                  ]}
+                />
+              </Form.Item>
+            </Col>
+            <Row justify={"end"} className="!mt-5 flex items-center w-full">
+              <Link className="!mr-5" to={"/"}>
+                Login
+              </Link>
+              <Button type="primary" htmlType="submit">
+                Register
+              </Button>
+            </Row>
           </Row>
         </Form>
       </div>
