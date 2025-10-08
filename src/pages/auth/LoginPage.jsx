@@ -21,7 +21,8 @@ const LoginPage = () => {
   const onFinish = (values) => {
     const matchedUser = data?.find(
       (user) =>
-        user.username === values.username && user.password === values.newPassword
+        user.username === values.username &&
+        user.password === values.securePassword
     );
 
     if (matchedUser) {
@@ -77,8 +78,8 @@ const LoginPage = () => {
             </Col>
             <Col span={24}>
               <Form.Item
-                name={"newPassword"}
-                label={<span className="text-white text-xl">New Password</span>}
+                name="securePassword"
+                label={<span className="text-white text-xl">Password</span>}
                 rules={[
                   {
                     required: true,
@@ -86,10 +87,10 @@ const LoginPage = () => {
                   },
                 ]}
               >
-                <Input
-                  type="password"
-                  placeholder="New password..."
-                  autoComplete="new-password"
+                <Input.Password
+                  name="secure-password"
+                  autoComplete="off"
+                  placeholder="Password..."
                 />
               </Form.Item>
             </Col>
