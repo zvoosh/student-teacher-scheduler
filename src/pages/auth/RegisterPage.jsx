@@ -82,10 +82,12 @@ const RegisterPage = () => {
                   },
                 ]}
               >
-                <Input
-                  type="password"
-                  placeholder="New password..."
+                <Input.Password
+                  id="new-password"
+                  name="new-password"
                   autoComplete="new-password"
+                  placeholder="Enter new password"
+                  className="w-full"
                 />
               </Form.Item>
             </Col>

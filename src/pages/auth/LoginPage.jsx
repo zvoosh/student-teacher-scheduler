@@ -88,9 +88,11 @@ const LoginPage = () => {
                 ]}
               >
                 <Input.Password
+                  id="secure-password"
                   name="secure-password"
-                  autoComplete="off"
-                  placeholder="Password..."
+                  autoComplete="secure-password"
+                  placeholder="Enter your password..."
+                  className="w-full"
                 />
               </Form.Item>
             </Col>
