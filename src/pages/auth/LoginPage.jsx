@@ -10,7 +10,9 @@ const LoginPage = () => {
   const { data } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
-      axios.get("https://back.appointment.dusanprogram.eu/api/users").then((res) => res.data),
+      axios
+        .get("https://back.appointment.dusanprogram.eu/api/users")
+        .then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -19,7 +21,7 @@ const LoginPage = () => {
   const onFinish = (values) => {
     const matchedUser = data?.find(
       (user) =>
-        user.username === values.username && user.password === values.password
+        user.username === values.username && user.password === values.newPassword
     );
 
     if (matchedUser) {
@@ -75,16 +77,20 @@ const LoginPage = () => {
             </Col>
             <Col span={24}>
               <Form.Item
-                name={"password"}
-                label={<span className="text-white text-xl">Password</span>}
+                name={"newPassword"}
+                label={<span className="text-white text-xl">New Password</span>}
                 rules={[
                   {
                     required: true,
-                    message: "Please enter your password",
+                    message: "Please enter your new password",
                   },
                 ]}
               >
-                <Input type="password" placeholder="Password..." />
+                <Input
+                  type="password"
+                  placeholder="New password..."
+                  autoComplete="new-password"
+                />
               </Form.Item>
             </Col>
           </Row>

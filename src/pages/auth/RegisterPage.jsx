@@ -11,7 +11,10 @@ const RegisterPage = () => {
 
   const mutation = useMutation({
     mutationFn: (user) => {
-      return axios.post("https://back.appointment.dusanprogram.eu/api/users", user);
+      return axios.post(
+        "https://back.appointment.dusanprogram.eu/api/users",
+        user
+      );
     },
     onSuccess: (response) => {
       const user = response.data;
@@ -34,7 +37,8 @@ const RegisterPage = () => {
   });
 
   const onFinish = (values) => {
-    console.log("vales", values);
+    values.password = values.newPassword;
+    delete values.newPassword;
     mutation.mutate(values);
     registerForm.resetFields();
   };
@@ -69,16 +73,20 @@ const RegisterPage = () => {
             </Col>
             <Col span={24}>
               <Form.Item
-                name={"password"}
-                label={<span className="text-white text-xl">Password</span>}
+                name={"newPassword"}
+                label={<span className="text-white text-xl">New Password</span>}
                 rules={[
                   {
                     required: true,
-                    message: "Please enter your password",
+                    message: "Please enter your new password",
                   },
                 ]}
               >
-                <Input type="password" placeholder="Password..." />
+                <Input
+                  type="password"
+                  placeholder="New password..."
+                  autoComplete="new-password"
+                />
               </Form.Item>
             </Col>
             <Col span={24}>
