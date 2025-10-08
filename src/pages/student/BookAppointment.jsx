@@ -20,7 +20,9 @@ const BookAppoitment = () => {
   const { data } = useQuery({
     queryKey: ["teacher"],
     queryFn: () =>
-      axios.get("https://back.appointment.dusanprogram.eu/api/teacher").then((res) => res.data),
+      axios
+        .get("https://back.appointment.dusanprogram.eu/api/teacher")
+        .then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -65,26 +67,26 @@ const BookAppoitment = () => {
           className="w-full object-cover"
         />
       </div>
-      <div className="h-fit !py-5 2xl:!py-10">
+      <div className="h-fit !py-20">
         <div className="w-full text-center !mb-5 2xl:!mb-10">
           <h1 className="text-xl 2xl:text-4xl">Book an appointment</h1>
         </div>
-        <div>
+        <div className="relative h-screen overflow-y-auto overscroll-contain px-4">
           <Form
             form={bookForm}
             name="basic"
-            labelCol={{ span: 5 }}
-            wrapperCol={{ span: 15 }}
             autoComplete="off"
             onFinish={handleFinish}
             className="flex w-full flex-col items-center !p-5"
           >
-            <Row gutter={[24, 24]} className="w-full !mb-5" justify={"center"}>
-              <Col span={12}>
+            <Row gutter={[24, 24]} className="w-full !mb-10" justify={"center"}>
+              <Col xs={24} lg={12} xl={6}>
                 <Form.Item
                   name={"fullname"}
                   label={
-                    <span className="text-white text-2xl">Full name:</span>
+                    <span className="text-white text-sm md:text-lg lg:text-2xl">
+                      Full name:
+                    </span>
                   }
                   colon={false}
                   rules={[
@@ -97,10 +99,14 @@ const BookAppoitment = () => {
                   <Input placeholder="Your full name..." />
                 </Form.Item>
               </Col>
-              <Col span={12}>
+              <Col xs={24} lg={12} xl={6}>
                 <Form.Item
                   name={"email"}
-                  label={<span className="text-white text-2xl">Email:</span>}
+                  label={
+                    <span className="text-white text-sm md:text-lg lg:text-2xl">
+                      Email:
+                    </span>
+                  }
                   colon={false}
                   rules={[
                     {
@@ -112,12 +118,14 @@ const BookAppoitment = () => {
                   <Input placeholder="Your email..." type="email" />
                 </Form.Item>
               </Col>
-            </Row>
-            <Row gutter={[24, 24]} className="w-full !mb-5">
-              <Col span={12}>
+              <Col xs={24} lg={12} xl={6}>
                 <Form.Item
                   name={"teacherId"}
-                  label={<span className="text-white text-2xl">Teacher:</span>}
+                  label={
+                    <span className="text-white text-sm md:text-lg lg:text-2xl">
+                      Teacher:
+                    </span>
+                  }
                   colon={false}
                   rules={[
                     {
@@ -137,11 +145,13 @@ const BookAppoitment = () => {
                   )}
                 </Form.Item>
               </Col>
-              <Col span={12}>
+              <Col xs={24} lg={12} xl={6}>
                 <Form.Item
-                  name={"dateTime"}
+                  name="dateTime"
                   label={
-                    <span className="text-white text-2xl">Date & time:</span>
+                    <span className="text-white text-sm md:text-lg lg:text-2xl">
+                      Date & time:
+                    </span>
                   }
                   colon={false}
                   rules={[
@@ -152,9 +162,12 @@ const BookAppoitment = () => {
                   ]}
                 >
                   <DatePicker
+                    showTime
                     className="w-full"
                     placeholder="Select date..."
-                    showTime
+                    showTimegetPopupContainer={(trigger) =>
+                      trigger.parentElement
+                    }
                   />
                 </Form.Item>
               </Col>
@@ -163,7 +176,11 @@ const BookAppoitment = () => {
               <Col span={24}>
                 <Form.Item
                   name={"message"}
-                  label={<span className="text-white text-2xl">Message:</span>}
+                  label={
+                    <span className="text-white text-sm md:text-lg lg:text-2xl">
+                      Message:
+                    </span>
+                  }
                   colon={false}
                   rules={[
                     {

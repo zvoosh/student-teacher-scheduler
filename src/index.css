@@ -8,3 +8,26 @@
 .aboreto {
   font-family: "Aboreto", system-ui, sans-serif;
 }
+/* Force full-width popup on mobile */
+@media (max-width: 768px) {
+  .ant-picker-dropdown {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+  }
+
+  .ant-picker-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .ant-picker-time-panel {
+    max-height: 40vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}

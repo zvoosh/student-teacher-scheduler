@@ -42,7 +42,9 @@ const HomePage = () => {
   const { data } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
-      axios.get("https://back.appointment.dusanprogram.eu/api/users").then((res) => res.data),
+      axios
+        .get("https://back.appointment.dusanprogram.eu/api/users")
+        .then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -72,7 +74,6 @@ const HomePage = () => {
 
   const { token } = theme.useToken();
   const wrapperStyle = {
-    width: 500,
     border: `1px solid ${token.colorBorderSecondary}`,
     borderRadius: token.borderRadiusLG,
   };
@@ -179,7 +180,10 @@ const HomePage = () => {
                 }`}
               >
                 <div className="text-center !mb-5">Select date</div>
-                <div style={wrapperStyle}>
+                <div
+                  style={wrapperStyle}
+                  className="!w-[300px] lg:!w-[500px]"
+                >
                   <Calendar
                     fullscreen={false}
                     value={values.date}

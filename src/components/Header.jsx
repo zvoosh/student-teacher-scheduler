@@ -91,7 +91,7 @@ const Header = () => {
             </Link>
           </>
         )}
-        {userRole == "admin" && (
+        {userRole == "student" && (
           <>
             <Link
               to={"/page/teachers"}
@@ -107,7 +107,7 @@ const Header = () => {
                 location.pathname == "/page/book/appointment" && "text-gray-400"
               }`}
             >
-              Book appoitment
+              Book appointment
             </Link>
             <Link
               className="!mx-5"
