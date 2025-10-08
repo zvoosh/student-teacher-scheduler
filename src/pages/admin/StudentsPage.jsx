@@ -11,7 +11,9 @@ const StudentsPage = () => {
   const { data } = useQuery({
     queryKey: ["activeusers"],
     queryFn: () =>
-      axios.get("https://back.appointment.dusanprogram.eu/api/users").then((res) => res.data),
+      axios
+        .get("https://back.appointment.dusanprogram.eu/api/users")
+        .then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -19,7 +21,9 @@ const StudentsPage = () => {
 
   const deleteMutation = useMutation({
     mutationFn: (uid) => {
-      return axios.delete(`https://back.appointment.dusanprogram.eu/api/user/${uid}`);
+      return axios.delete(
+        `https://back.appointment.dusanprogram.eu/api/user/${uid}`
+      );
     },
     onSuccess: () => {
       notification.success({
@@ -126,11 +130,12 @@ const StudentsPage = () => {
         <div className="w-full text-center !mb-5 2xl:!mb-10">
           <h1 className="text-xl 2xl:text-4xl">Approve Registered Students</h1>
         </div>
-        <div>
+        <div className="overflow-x-auto">
           <Table
             columns={columns}
             dataSource={activeUsers}
             rowKey={(index) => index}
+            scroll={{ x: "max-content" }}
           />
         </div>
       </div>
