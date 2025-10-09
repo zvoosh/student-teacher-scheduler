@@ -50,19 +50,19 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="w-full xl:w-1/2 2xl:w-1/2 h-1/2 xl:h-screen 2xl:h-screen bg-gray-800 text-white !p-5 overflow-hidden">
+    <div className="w-full xl:h-screen 2xl:h-screen bg-gray-800 text-white !p-5 overflow-hidden">
       <div className="flex flex-col justify-between items-center h-full">
         <h2 className="text-2xl font-bold !mb-5 text-center hidden xl:block">
           Student-Teacher Scheduler
         </h2>
         {/* Login Form */}
-        <div className="w-full h-full flex flex-col justify-center items-center">
+        <div className="w-1/5 h-full flex flex-col justify-center items-center">
           <h2 className="text-2xl font-bold !mb-10 text-center">Login</h2>
           <Form
             form={loginForm}
             name="basic"
-            labelCol={{ span: 6 }}
-            wrapperCol={{ span: 16 }}
+            labelCol={{ span: 24 }}
+            wrapperCol={{ span: 24 }}
             autoComplete="off"
             onFinish={onFinish}
           >
@@ -111,12 +111,12 @@ const LoginPage = () => {
           </Form>
         </div>
         <div className="text-2xl font-bold !mb-5 text-center w-1/2 hidden lg:block">
-        <a target="_blank" href="https://www.instagram.com/klasican_dan/">
-          <InstagramOutlined className="!mr-5"/>
-        </a>
-        <a  target="_blank" href="https://github.com/zvoosh">
-          <GithubOutlined />
-        </a>
+          <a target="_blank" href="https://www.instagram.com/klasican_dan/">
+            <InstagramOutlined className="!mr-5" />
+          </a>
+          <a target="_blank" href="https://github.com/zvoosh">
+            <GithubOutlined />
+          </a>
         </div>
       </div>
     </div>

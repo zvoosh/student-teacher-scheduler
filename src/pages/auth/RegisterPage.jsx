@@ -45,23 +45,23 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="w-full xl:w-1/2 2xl:w-1/2 h-screen bg-gray-800 text-white !p-5 overflow-hidden overflow-y-auto md:overflow-y-hidden">
+    <div className="w-full h-screen bg-gray-800 text-white !p-5 overflow-hidden overflow-y-auto md:overflow-y-hidden">
       <div className="flex flex-col justify-between items-center h-full">
         <h2 className="text-2xl font-bold !mb-5 text-center hidden md:block">
           Student-Teacher Scheduler
         </h2>
-        <div className="w-full h-full flex flex-col justify-center items-center !pt-20">
-          <h2 className="text-2xl font-bold !mb-5 text-center">Register</h2>
+        <div className="w-1/5 h-full flex flex-col justify-center items-center !pt-20">
+          <h2 className="text-2xl font-bold !mb-10 text-center">Register</h2>
           <Form
             form={registerForm}
             name="basic"
-            labelCol={{ span: 6 }}
-            wrapperCol={{ span: 16 }}
+            labelCol={{ span: 24 }}
+            wrapperCol={{ span: 24 }}
             autoComplete="off"
             onFinish={onFinish}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center justify-center w-full"
           >
-            <Row justify="center" gutter={[4, 4]} className="w-3/5">
+            <Row justify="center" >
               <Col span={24}>
                 <Form.Item
                   name={"username"}
@@ -76,6 +76,7 @@ const RegisterPage = () => {
                   <Input placeholder="Username..." />
                 </Form.Item>
               </Col>
+
               <Col span={24}>
                 <Form.Item
                   name={"newPassword"}
@@ -172,7 +173,10 @@ const RegisterPage = () => {
                   />
                 </Form.Item>
               </Col>
-              <Row justify={"end"} className="!mt-5 flex items-center w-full !mb-5">
+              <Row
+                justify={"end"}
+                className="!mt-5 flex items-center w-full !mb-5"
+              >
                 <Link className="!mr-5" to={"/"}>
                   Login
                 </Link>
