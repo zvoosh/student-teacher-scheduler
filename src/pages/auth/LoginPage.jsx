@@ -50,13 +50,13 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="w-full xl:h-screen 2xl:h-screen bg-gray-800 text-white !p-5 overflow-hidden">
+    <div className="w-full h-screen bg-gray-800 text-white !p-5 overflow-hidden">
       <div className="flex flex-col justify-between items-center h-full">
         <h2 className="text-2xl font-bold !mb-5 text-center hidden xl:block">
           Student-Teacher Scheduler
         </h2>
         {/* Login Form */}
-        <div className="w-1/5 h-full flex flex-col justify-center items-center">
+        <div className="w-full lg:w-2/5 xl:w-1/5 h-full flex flex-col justify-center items-center">
           <h2 className="text-2xl font-bold !mb-10 text-center">Login</h2>
           <Form
             form={loginForm}

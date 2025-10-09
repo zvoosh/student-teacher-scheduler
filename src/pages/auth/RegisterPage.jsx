@@ -50,7 +50,7 @@ const RegisterPage = () => {
         <h2 className="text-2xl font-bold !mb-5 text-center hidden md:block">
           Student-Teacher Scheduler
         </h2>
-        <div className="w-1/5 h-full flex flex-col justify-center items-center !pt-20">
+        <div className="w-full lg:w-2/5 xl:w-1/5 h-full flex flex-col justify-center items-center !pt-20">
           <h2 className="text-2xl font-bold !mb-10 text-center">Register</h2>
           <Form
             form={registerForm}
