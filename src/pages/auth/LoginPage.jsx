@@ -52,7 +52,7 @@ const LoginPage = () => {
   return (
     <div className="w-full h-screen bg-gray-800 text-white !p-5 overflow-hidden">
       <div className="flex flex-col justify-between items-center h-full">
-        <h2 className="text-2xl font-bold !mb-5 text-center hidden xl:block">
+        <h2 className="text-2xl font-bold !mb-5 text-center">
           Student-Teacher Scheduler
         </h2>
         {/* Login Form */}
@@ -110,7 +110,7 @@ const LoginPage = () => {
             </Row>
           </Form>
         </div>
-        <div className="text-2xl font-bold !mb-5 text-center w-1/2 hidden lg:block">
+        <div className="text-2xl font-bold !mb-5 text-center w-1/2 ">
           <a target="_blank" href="https://www.instagram.com/klasican_dan/">
             <InstagramOutlined className="!mr-5" />
           </a>

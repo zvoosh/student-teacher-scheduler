@@ -47,10 +47,10 @@ const RegisterPage = () => {
   return (
     <div className="w-full h-screen bg-gray-800 text-white !p-5 overflow-hidden overflow-y-auto md:overflow-y-hidden">
       <div className="flex flex-col justify-between items-center h-full">
-        <h2 className="text-2xl font-bold !mb-5 text-center hidden md:block">
+        <h2 className="text-2xl font-bold !mb-5 text-center">
           Student-Teacher Scheduler
         </h2>
-        <div className="w-full lg:w-2/5 xl:w-1/5 h-full flex flex-col justify-center items-center !pt-20">
+        <div className="w-full lg:w-2/5 xl:w-1/5 h-full flex flex-col justify-center items-center !mt-20">
           <h2 className="text-2xl font-bold !mb-10 text-center">Register</h2>
           <Form
             form={registerForm}
@@ -61,7 +61,7 @@ const RegisterPage = () => {
             onFinish={onFinish}
             className="flex flex-col items-center justify-center w-full"
           >
-            <Row justify="center" >
+            <Row justify="center">
               <Col span={24}>
                 <Form.Item
                   name={"username"}
@@ -186,14 +186,14 @@ const RegisterPage = () => {
               </Row>
             </Row>
           </Form>
-        </div>
-        <div className="text-2xl font-bold !mb-5 text-center w-1/2 hidden md:block">
-          <a target="_blank" href="https://www.instagram.com/klasican_dan/">
-            <InstagramOutlined className="!mr-5" />
-          </a>
-          <a target="_blank" href="https://github.com/zvoosh">
-            <GithubOutlined />
-          </a>
+          <div className="text-2xl font-bold !pb-5 text-center w-1/2">
+            <a target="_blank" href="https://www.instagram.com/klasican_dan/">
+              <InstagramOutlined className="!mr-5" />
+            </a>
+            <a target="_blank" href="https://github.com/zvoosh">
+              <GithubOutlined />
+            </a>
+          </div>
         </div>
       </div>
     </div>
