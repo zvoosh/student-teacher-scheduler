@@ -85,12 +85,18 @@ const HomePage = () => {
   };
 
   const handleFinish = () => {
-    const date = dayjs(values.date).format("DD/MM/YYYY");
+    const dateTime = dayjs(values.date)
+      .hour(dayjs(values.time).hour())
+      .minute(dayjs(values.time).minute())
+      .second(dayjs(values.time).second());
+    const formatted = dateTime.format("YYYY-MM-DD HH:mm");
+    delete values.date;
+    delete values.time;
     const teacherId = teacher.uid;
     const message = textMessage;
     const obj = {
       ...values,
-      date,
+      dateTime: formatted,
       teacherId,
       message,
     };
@@ -180,10 +186,7 @@ const HomePage = () => {
                 }`}
               >
                 <div className="text-center !mb-5">Select date</div>
-                <div
-                  style={wrapperStyle}
-                  className="!w-[300px] lg:!w-[500px]"
-                >
+                <div style={wrapperStyle} className="!w-[300px] lg:!w-[500px]">
                   <Calendar
                     fullscreen={false}
                     value={values.date}

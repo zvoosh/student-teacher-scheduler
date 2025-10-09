@@ -1,1 +1,2 @@
-export * from './BookAppointment'
+export * from "./BookAppointmentPage";
+export * from "./StudentAppointmentsPage";

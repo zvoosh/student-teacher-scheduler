@@ -26,7 +26,9 @@ const MessagePage = () => {
 
   const mutation = useMutation({
     mutationFn: (id) => {
-      return axios.delete(`https://back.appointment.dusanprogram.eu/api/appointments/${id}`);
+      return axios.delete(
+        `https://back.appointment.dusanprogram.eu/api/appointments/${id}`
+      );
     },
     onSuccess: () => {
       queryClient.invalidateQueries("appointments");
@@ -135,6 +137,7 @@ const MessagePage = () => {
                       <div className="flex justify-between items-center text-lg font-bold bg-purple-600 !p-2 rounded-t-lg">
                         <div className="flex flex-col">
                           <div className="capitalize">
+                            {appointment.fromTeacher ? "To: " : "From: "}
                             {appointment.studentFullname}
                           </div>
                         </div>

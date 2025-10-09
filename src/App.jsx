@@ -9,7 +9,8 @@ import {
   AppointmentsPage,
   TeachersPage,
   StudentsPage,
-  BookAppoitment,
+  BookAppoitmentPage,
+  StudentAppointmentsPage,
 } from "./pages";
 import { NotFoundPage, PageLayout, ProtectedRoute } from "./components";
 
@@ -35,7 +36,11 @@ function App() {
           <Route path="appointments" element={<AppointmentsPage />} />
           <Route path="teachers" element={<TeachersPage />} />
           <Route path="students" element={<StudentsPage />} />
-          <Route path="book/appointment" element={<BookAppoitment />} />
+          <Route path="book/appointment" element={<BookAppoitmentPage />} />
+          <Route
+            path="student/appointments"
+            element={<StudentAppointmentsPage />}
+          />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

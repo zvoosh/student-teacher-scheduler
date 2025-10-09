@@ -14,7 +14,7 @@ import dayjs from "dayjs";
 
 const { TextArea } = Input;
 
-const BookAppoitment = () => {
+const BookAppoitmentPage = () => {
   const [bookForm] = Form.useForm();
 
   const { data } = useQuery({
@@ -208,4 +208,4 @@ const BookAppoitment = () => {
   );
 };
 
-export { BookAppoitment };
+export { BookAppoitmentPage };

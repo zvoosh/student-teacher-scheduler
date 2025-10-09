@@ -110,6 +110,15 @@ const Header = () => {
               Book appointment
             </Link>
             <Link
+              to={"/page/student/appointments"}
+              className={`!mx-5  ${
+                location.pathname == "/page/student/appointments" &&
+                "text-gray-400"
+              }`}
+            >
+              Appointments
+            </Link>
+            <Link
               className="!mx-5"
               to={"/"}
               onClick={() => {
@@ -226,6 +235,15 @@ const Header = () => {
                 }`}
               >
                 Book Appoitment
+              </Link>
+              <Link
+                to={"/page/student/appointments"}
+                className={`!mx-5 underline underline-offset-4 ${
+                  location.pathname == "/page/student/appointments" &&
+                  "text-gray-400"
+                }`}
+              >
+                Appointments
               </Link>
               <Link
                 to={"/"}
