@@ -1,3 +1,4 @@
+import { GithubOutlined, InstagramOutlined } from "@ant-design/icons";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button, Col, Form, Input, notification, Row, Select } from "antd";
 import axios from "axios";
@@ -45,136 +46,151 @@ const RegisterPage = () => {
 
   return (
     <div className="w-full xl:w-1/2 2xl:w-1/2 h-screen bg-gray-800 text-white !p-5 overflow-hidden overflow-y-auto md:overflow-y-hidden">
-      <h2 className="text-2xl font-bold !mb-5 text-center">Register</h2>
-      <div className="w-full h-full flex justify-center items-center">
-        <Form
-          form={registerForm}
-          name="basic"
-          labelCol={{ span: 6 }}
-          wrapperCol={{ span: 16 }}
-          autoComplete="off"
-          onFinish={onFinish}
-          className="flex flex-col items-center"
-        >
-          <Row justify="center" gutter={[4, 4]} className="w-3/5">
-            <Col span={24}>
-              <Form.Item
-                name={"username"}
-                label={<span className="text-white text-xl">Username</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter your username",
-                  },
-                ]}
-              >
-                <Input placeholder="Username..." />
-              </Form.Item>
-            </Col>
-            <Col span={24}>
-              <Form.Item
-                name={"newPassword"}
-                label={<span className="text-white text-xl">New Password</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter your new password",
-                  },
-                ]}
-              >
-                <Input.Password
-                  name="new-password"
-                  autoComplete="new-password"
-                  placeholder="New password"
-                />
-              </Form.Item>
-            </Col>
-            <Col span={24}>
-              <Form.Item
-                name={"fullname"}
-                label={<span className="text-white text-xl">Full name</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter your full name",
-                  },
-                ]}
-              >
-                <Input placeholder="Full name..." />
-              </Form.Item>
-            </Col>
-            <Col span={24}>
-              <Form.Item
-                name={"role"}
-                label={<span className="text-white text-xl">Role</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter your role",
-                  },
-                ]}
-              >
-                <Select
-                  className="w-full"
-                  placeholder="Select role..."
-                  options={[
-                    { value: "admin", label: "Admin" },
-                    { value: "student", label: "Student" },
-                    { value: "teacher", label: "Teacher" },
+      <div className="flex flex-col justify-between items-center h-full">
+        <h2 className="text-2xl font-bold !mb-5 text-center hidden md:block">
+          Student-Teacher Scheduler
+        </h2>
+        <div className="w-full h-full flex flex-col justify-center items-center !pt-20">
+          <h2 className="text-2xl font-bold !mb-5 text-center">Register</h2>
+          <Form
+            form={registerForm}
+            name="basic"
+            labelCol={{ span: 6 }}
+            wrapperCol={{ span: 16 }}
+            autoComplete="off"
+            onFinish={onFinish}
+            className="flex flex-col items-center"
+          >
+            <Row justify="center" gutter={[4, 4]} className="w-3/5">
+              <Col span={24}>
+                <Form.Item
+                  name={"username"}
+                  label={<span className="text-white text-xl">Username</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your username",
+                    },
                   ]}
-                />
-              </Form.Item>
-            </Col>
+                >
+                  <Input placeholder="Username..." />
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item
+                  name={"newPassword"}
+                  label={
+                    <span className="text-white text-xl">New Password</span>
+                  }
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your new password",
+                    },
+                  ]}
+                >
+                  <Input.Password
+                    name="new-password"
+                    autoComplete="new-password"
+                    placeholder="New password"
+                  />
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item
+                  name={"fullname"}
+                  label={<span className="text-white text-xl">Full name</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your full name",
+                    },
+                  ]}
+                >
+                  <Input placeholder="Full name..." />
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item
+                  name={"role"}
+                  label={<span className="text-white text-xl">Role</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your role",
+                    },
+                  ]}
+                >
+                  <Select
+                    className="w-full"
+                    placeholder="Select role..."
+                    options={[
+                      { value: "admin", label: "Admin" },
+                      { value: "student", label: "Student" },
+                      { value: "teacher", label: "Teacher" },
+                    ]}
+                  />
+                </Form.Item>
+              </Col>
 
-            <Col span={24}>
-              <Form.Item
-                name={"age"}
-                label={<span className="text-white text-xl">Age</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter your age",
-                  },
-                ]}
-              >
-                <Input placeholder="Your age..." />
-              </Form.Item>
-            </Col>
-            <Col span={24}>
-              <Form.Item
-                name={"education"}
-                label={<span className="text-white text-xl">Education</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter your education",
-                  },
-                ]}
-              >
-                <Select
-                  className="w-full"
-                  placeholder="Select your education level..."
-                  options={[
-                    { value: "PhD", label: "Doctorate" },
-                    { value: "Ms", label: "Master's" },
-                    { value: "Bs", label: "Bachelor's" },
-                    { value: "Hs", label: "High School" },
-                    { value: "Es", label: "Elementary School" },
-                    { value: "none", label: "None" },
+              <Col span={24}>
+                <Form.Item
+                  name={"age"}
+                  label={<span className="text-white text-xl">Age</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your age",
+                    },
                   ]}
-                />
-              </Form.Item>
-            </Col>
-            <Row justify={"end"} className="!mt-5 flex items-center w-full">
-              <Link className="!mr-5" to={"/"}>
-                Login
-              </Link>
-              <Button type="primary" htmlType="submit">
-                Register
-              </Button>
+                >
+                  <Input placeholder="Your age..." />
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item
+                  name={"education"}
+                  label={<span className="text-white text-xl">Education</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your education",
+                    },
+                  ]}
+                >
+                  <Select
+                    className="w-full"
+                    placeholder="Select your education level..."
+                    options={[
+                      { value: "PhD", label: "Doctorate" },
+                      { value: "Ms", label: "Master's" },
+                      { value: "Bs", label: "Bachelor's" },
+                      { value: "Hs", label: "High School" },
+                      { value: "Es", label: "Elementary School" },
+                      { value: "none", label: "None" },
+                    ]}
+                  />
+                </Form.Item>
+              </Col>
+              <Row justify={"end"} className="!mt-5 flex items-center w-full !mb-5">
+                <Link className="!mr-5" to={"/"}>
+                  Login
+                </Link>
+                <Button type="primary" htmlType="submit">
+                  Register
+                </Button>
+              </Row>
             </Row>
-          </Row>
-        </Form>
+          </Form>
+        </div>
+        <div className="text-2xl font-bold !mb-5 text-center w-1/2 hidden md:block">
+          <a target="_blank" href="https://www.instagram.com/klasican_dan/">
+            <InstagramOutlined className="!mr-5" />
+          </a>
+          <a target="_blank" href="https://github.com/zvoosh">
+            <GithubOutlined />
+          </a>
+        </div>
       </div>
     </div>
   );

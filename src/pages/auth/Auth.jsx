@@ -20,14 +20,15 @@ const Auth = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const hideSlider = location.pathname === "/register";
+  const registerSlider = location.pathname === "/register";
+  const loginSlider = location.pathname === "/";
 
   return (
     <div className="w-screen h-screen bg-blue-500 flex flex-col xl:flex-row">
       <div
-        className={`w-full xl:w-1/2 2xl:w-1/2 h-1/2 xl:h-screen 2xl:h-screen flex items-center justify-center overflow-hidden ${
-          hideSlider && "hidden xl:block"
-        }`}
+        className={`w-full xl:w-1/2 2xl:w-1/2 h-1/2 xl:h-screen 2xl:h-screen flex items-center justify-center overflow-hidden hidden ${
+          registerSlider ? "xl:block" : ""
+        } ${loginSlider ? "!block" : ""}`}
       >
         {/* Image slider */}
         <div className="w-full relative overflow-hidden aspect-[3/4]">
