@@ -71,7 +71,7 @@ const BookAppoitment = () => {
         <div className="w-full text-center !mb-5 2xl:!mb-10">
           <h1 className="text-xl 2xl:text-4xl">Book an appointment</h1>
         </div>
-        <div className="relative h-screen overflow-y-auto overscroll-contain px-4">
+        <div className="relative overflow-y-auto overscroll-contain px-4">
           <Form
             form={bookForm}
             name="basic"
