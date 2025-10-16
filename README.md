@@ -68,10 +68,10 @@ npm run dev
 
 ![Student Books](https://i.imgur.com/bIbNzzj.webp)
 
-4. Author
+## Author
 
 Made with ❤️ by zvoosh
 
-5. Contact
+## Contact
 
 Maintainer: `zvoosh` — [https://github.com/zvoosh](https://github.com/zvoosh)
