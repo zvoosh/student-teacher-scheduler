@@ -2,50 +2,28 @@
 
 A simple scheduling web app that helps students and teachers coordinate sessions.
 
----
-
-## Table of contents
-
-* [Project overview](#project-overview)
-* [Features](#features)
-* [Tech stack](#tech-stack)
-* [Prerequisites](#prerequisites)
-* [Quick start](#quick-start)
-* [Available scripts](#available-scripts)
-* [Project structure](#project-structure)
-* [Configuration](#configuration)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-
----
-
 ## Project overview
 
 **Student‑Teacher Scheduler** is a front-end application (React + Vite) intended to let teachers publish available time slots and students book sessions. It focuses on a minimal, practical UX for creating, viewing, and managing appointments.
 
-This README assumes the repository contains a typical Vite + React project. If your project has a different setup (Next.js, plain React, or a backend), adapt the commands accordingly.
-
 ## Features
 
-* Create and manage teacher and student accounts (UI flows)
-* Teachers define available time slots
-* Students browse availability and book sessions
-* Basic conflict detection
-* Cancel / reschedule bookings
-* Responsive UI
+- Create and manage teacher and student accounts
+- Teachers define available time slots
+- Students browse availability and book sessions
+- Cancel / reschedule bookings
+- Responsive UI
 
 ## Tech stack
 
-* React
-* Vite
-* JavaScript (or TypeScript if present)
-* ESLint (optional)
-
-## Prerequisites
-
-* Node.js v16+
-* npm or yarn
+- React
+- Vite
+- JavaScript
+- React Query
+- Axios
+- Tailwind
+- Ant Design
+- React Router
 
 ## Quick start
 
@@ -72,81 +50,28 @@ npm run dev
 # yarn dev
 ```
 
-Open the address shown by Vite (usually `http://localhost:5173`) in your browser.
+3. Screenshots
 
-## Available scripts
+### Homepage
 
-Put these in `package.json` if they aren't already:
+![Homepage](https://i.imgur.com/YD738x2.webp)
 
-```json
-{
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
-  }
-}
-```
+### Booking Flow
 
-Adjust linters/build tools to match your project.
+![Booking Flow](https://i.imgur.com/WvyqGF0.webp)
 
-## Project structure (suggested)
+### Availability View
 
-```
-student-teacher-scheduler/
-├── public/
-├── src/
-│   ├── components/      # Reusable UI components
-│   ├── pages/           # Views / pages
-│   ├── services/        # API calls / data-layer
-│   ├── hooks/           # Custom hooks
-│   ├── styles/          # Global and component styles
-│   └── main.jsx         # App entry
-├── .eslintrc.js
-├── package.json
-└── vite.config.js
-```
+![Availability View](https://i.imgur.com/ZyoKXez.webp)
 
-## Configuration
+### Responsive Layout
 
-If your scheduler needs a backend, you can use environment variables. Create a `.env` file in the project root and add values like:
+![Responsive Layout](https://i.imgur.com/bIbNzzj.webp)
 
-```
-VITE_API_URL=http://localhost:4000
-VITE_GOOGLE_CLIENT_ID=your-google-client-id
-```
+4. Author
 
-Access these in code with `import.meta.env.VITE_API_URL`.
+Made with ❤️ by zvoosh
 
-## Tips & suggestions
-
-* If you have no backend yet, use a simple in-memory mock or `json-server` for prototyping:
-
-  ```bash
-  npm install -g json-server
-  json-server --watch db.json --port 4000
-  ```
-* Add unit/component tests with Vitest or React Testing Library.
-* Secure production API keys — do not commit `.env`.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit changes and push
-4. Create a Pull Request with a clear description
-
-Please follow existing code style. Add tests for new features where possible.
-
-## License
-
-This project does not include a license yet. To make it open-source, add a license file (for example MIT). If you want, I can add an `LICENSE` file for you.
-
-## Contact
+5. Contact
 
 Maintainer: `zvoosh` — [https://github.com/zvoosh](https://github.com/zvoosh)
-
----
-
-*If you want, I can also generate a ready-to-paste `README.md` variant tailored to a specific stack (for example: React + Firebase, or Next.js + Express). Tell me which backend or auth system you're using and I’ll adapt it.*
