@@ -50,23 +50,23 @@ npm run dev
 # yarn dev
 ```
 
-3. Screenshots
+## Screenshots
 
-### Homepage
+### Activate Accounts
 
-![Homepage](https://i.imgur.com/YD738x2.webp)
+![Activate Accounts](https://i.imgur.com/YD738x2.webp)
 
-### Booking Flow
+### Teacher Books
 
-![Booking Flow](https://i.imgur.com/WvyqGF0.webp)
+![Teacher Books](https://i.imgur.com/WvyqGF0.webp)
 
-### Availability View
+### Approved Appointments
 
-![Availability View](https://i.imgur.com/ZyoKXez.webp)
+![Approved Appointments](https://i.imgur.com/ZyoKXez.webp)
 
-### Responsive Layout
+### Student Books
 
-![Responsive Layout](https://i.imgur.com/bIbNzzj.webp)
+![Student Books](https://i.imgur.com/bIbNzzj.webp)
 
 4. Author
 
