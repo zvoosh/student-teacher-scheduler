@@ -133,7 +133,7 @@ const Header = () => {
       <div className="!py-2 flex flex-col justify-center items-center">
         <h1 className="text-sm 2xl:text-2xl font-bold text-center !mb-3 flex">
           <div
-            className="block 2xl:hidden"
+            className="block 2xl:hidden !mx-2 cursor-pointer"
             onClick={() => {
               isMenuOpen((prev) => !prev);
             }}

@@ -1,5 +1,5 @@
 import { GithubOutlined, InstagramOutlined } from "@ant-design/icons";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button, Col, Form, Input, notification, Row, Select } from "antd";
 import axios from "axios";
 import { Link, useNavigate } from "react-router";
@@ -9,6 +9,17 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   const queryClient = useQueryClient();
+
+  const { data } = useQuery({
+    queryKey: ["users"],
+    queryFn: () =>
+      axios
+        .get("https://back.appointment.dusanprogram.eu/api/users")
+        .then((res) => res.data),
+    staleTime: 1000 * 60 * 5,
+    refetchOnWindowFocus: false,
+    enabled: true,
+  });
 
   const mutation = useMutation({
     mutationFn: (user) => {
@@ -40,6 +51,11 @@ const RegisterPage = () => {
   const onFinish = (values) => {
     values.password = values.newPassword;
     delete values.newPassword;
+    const userExists = data.find((user) => user.username === values.username);
+    if (userExists) {
+      notification.error({message: "Username already exists!", description: "Try another one!"});
+      return;
+    }
     mutation.mutate(values);
     registerForm.resetFields();
   };

@@ -141,7 +141,7 @@ const TeachersPage = () => {
     if (param == "ms") {
       return "Master's";
     }
-    if (param == "el") {
+    if (param == "es") {
       return "Elementary's";
     }
     if (param == "hs") {
@@ -204,7 +204,7 @@ const TeachersPage = () => {
                             <div className="capitalize !ml-2 !py-2">
                               <div>
                                 {teacher.fullname}
-                                {` (${handleEducation(teacher.education)})`}
+                                {` (${teacher.education ? handleEducation(teacher.education): "No diploma"})`}
                               </div>
                               <div>
                                 {teacher.teacherRole

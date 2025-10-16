@@ -186,7 +186,10 @@ const HomePage = () => {
                 }`}
               >
                 <div className="text-center !mb-5">Select date</div>
-                <div style={wrapperStyle} className="!w-[300px] lg:!w-[500px]">
+                <div
+                  style={wrapperStyle}
+                  className="!w-[300] md:!w-[400px] lg:!w-[400px] 2xl:!w-[500px]"
+                >
                   <Calendar
                     fullscreen={false}
                     value={values.date}
@@ -260,6 +263,7 @@ const HomePage = () => {
                       }));
                     }}
                     className="w-1/2"
+                    notFoundContent="No active students"
                   >
                     {data
                       .filter(
