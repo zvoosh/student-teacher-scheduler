@@ -80,7 +80,7 @@ const BookAppoitmentPage = () => {
             className="flex w-full flex-col items-center !p-5"
           >
             <Row gutter={[24, 24]} className="w-full !mb-10" justify={"center"}>
-              <Col xs={24} lg={12} xl={6}>
+              <Col xs={24} sm={12} lg={10} xl={12} xxl={12}>
                 <Form.Item
                   name={"fullname"}
                   label={
@@ -99,7 +99,7 @@ const BookAppoitmentPage = () => {
                   <Input placeholder="Your full name..." />
                 </Form.Item>
               </Col>
-              <Col xs={24} lg={12} xl={6}>
+              <Col xs={24} sm={12} lg={10} xl={12} xxl={12}>
                 <Form.Item
                   name={"email"}
                   label={
@@ -118,7 +118,7 @@ const BookAppoitmentPage = () => {
                   <Input placeholder="Your email..." type="email" />
                 </Form.Item>
               </Col>
-              <Col xs={24} lg={12} xl={6}>
+              <Col xs={24} sm={12} lg={10} xl={12} xxl={12}>
                 <Form.Item
                   name={"teacherId"}
                   label={
@@ -145,7 +145,7 @@ const BookAppoitmentPage = () => {
                   )}
                 </Form.Item>
               </Col>
-              <Col xs={24} lg={12} xl={6}>
+              <Col xs={24} sm={12} lg={10} xl={12} xxl={12}>
                 <Form.Item
                   name="dateTime"
                   label={
