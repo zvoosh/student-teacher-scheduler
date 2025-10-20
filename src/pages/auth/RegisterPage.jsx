@@ -61,7 +61,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-gray-800 text-white !p-5 overflow-hidden overflow-y-auto md:overflow-y-hidden">
+    <div className="w-full h-screen bg-gray-800 text-white !p-5 overflow-hidden overflow-y-auto ">
       <div className="flex flex-col justify-between items-center h-full">
         <h2 className="text-2xl font-bold !mb-5 text-center">
           Student-Teacher Scheduler
@@ -78,7 +78,7 @@ const RegisterPage = () => {
             className="flex flex-col items-center justify-center w-full"
           >
             <Row justify="center">
-              <Col span={24}>
+              <Col xs={19} sm={19} md={13} lg={24} xl={24}>
                 <Form.Item
                   name={"username"}
                   label={<span className="text-white text-xl">Username</span>}
@@ -93,7 +93,7 @@ const RegisterPage = () => {
                 </Form.Item>
               </Col>
 
-              <Col span={24}>
+              <Col xs={19} sm={19} md={13} lg={24} xl={24}>
                 <Form.Item
                   name={"newPassword"}
                   label={
@@ -113,7 +113,7 @@ const RegisterPage = () => {
                   />
                 </Form.Item>
               </Col>
-              <Col span={24}>
+              <Col xs={19} sm={19} md={13} lg={24} xl={24}>
                 <Form.Item
                   name={"fullname"}
                   label={<span className="text-white text-xl">Full name</span>}
@@ -127,7 +127,7 @@ const RegisterPage = () => {
                   <Input placeholder="Full name..." />
                 </Form.Item>
               </Col>
-              <Col span={24}>
+              <Col xs={19} sm={19} md={13} lg={24} xl={24}>
                 <Form.Item
                   name={"role"}
                   label={<span className="text-white text-xl">Role</span>}
@@ -150,7 +150,7 @@ const RegisterPage = () => {
                 </Form.Item>
               </Col>
 
-              <Col span={24}>
+              <Col xs={19} sm={19} md={13} lg={24} xl={24}>
                 <Form.Item
                   name={"age"}
                   label={<span className="text-white text-xl">Age</span>}
@@ -164,7 +164,7 @@ const RegisterPage = () => {
                   <Input placeholder="Your age..." />
                 </Form.Item>
               </Col>
-              <Col span={24}>
+              <Col xs={19} sm={19} md={13} lg={24} xl={24}>
                 <Form.Item
                   name={"education"}
                   label={<span className="text-white text-xl">Education</span>}
