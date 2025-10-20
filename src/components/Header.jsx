@@ -133,7 +133,7 @@ const Header = () => {
       <div className="!py-2 flex flex-col justify-center items-center">
         <h1 className="text-sm 2xl:text-2xl font-bold text-center !mb-3 flex">
           <div
-            className="block 2xl:hidden !mx-2 cursor-pointer"
+            className="block lg:hidden !mx-2 cursor-pointer"
             onClick={() => {
               isMenuOpen((prev) => !prev);
             }}
@@ -142,7 +142,7 @@ const Header = () => {
           </div>
           <div>Student - Teacher Scheduling Application</div>
         </h1>
-        <div className="hidden 2xl:block">
+        <div className="hidden lg:block">
           {userRole == "teacher" && (
             <>
               <Link
