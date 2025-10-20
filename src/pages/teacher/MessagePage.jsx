@@ -129,7 +129,9 @@ const MessagePage = () => {
                   <Col
                     xs={24}
                     sm={12}
-                    lg={6}
+                    lg={10}
+                    xl={12}
+                    xxl={8}
                     className="flex items-stretch"
                     key={index}
                   >
