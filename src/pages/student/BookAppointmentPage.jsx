@@ -51,8 +51,14 @@ const BookAppoitmentPage = () => {
   });
 
   const handleFinish = (values) => {
-    values.dateTime = dayjs(values.dateTime).format("DD/MM/YYYY HH:mm");
+    const dateTime = dayjs(values.dateTime)
+      .hour(dayjs(values.time).hour())
+      .minute(dayjs(values.time).minute())
+      .second(dayjs(values.time).second());
+    const formatted = dateTime.format("YYYY-MM-DD HH:mm");
+    delete values.dateTime;
     values.studentFullname = values.fullname;
+    values.dateTime = formatted;
     values.studentId = JSON.parse(sessionStorage.getItem("logedInUser")).uid;
     delete values.fullname;
     mutation.mutate(values);
