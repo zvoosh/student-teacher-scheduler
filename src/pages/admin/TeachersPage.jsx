@@ -27,7 +27,9 @@ const TeachersPage = () => {
   const { data } = useQuery({
     queryKey: ["teachers"],
     queryFn: () =>
-      axios.get("https://back.appointment.dusanprogram.eu/api/teacher").then((res) => res.data),
+      axios
+        .get("https://back.appointment.dusanprogram.eu/api/teacher")
+        .then((res) => res.data),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     enabled: true,
@@ -41,7 +43,10 @@ const TeachersPage = () => {
 
   const mutation = useMutation({
     mutationFn: (teacher) => {
-      return axios.post("https://back.appointment.dusanprogram.eu/api/teachers", teacher);
+      return axios.post(
+        "https://back.appointment.dusanprogram.eu/api/teachers",
+        teacher
+      );
     },
     onSuccess: () => {
       notification.success({
@@ -84,7 +89,9 @@ const TeachersPage = () => {
 
   const deleteMutation = useMutation({
     mutationFn: (uid) => {
-      return axios.delete(`https://back.appointment.dusanprogram.eu/api/user/${uid}`);
+      return axios.delete(
+        `https://back.appointment.dusanprogram.eu/api/user/${uid}`
+      );
     },
     onSuccess: () => {
       notification.success({
@@ -191,7 +198,9 @@ const TeachersPage = () => {
                     <Col
                       xs={24}
                       sm={12}
-                      lg={6}
+                      lg={10}
+                      xl={12}
+                      xxl={8}
                       className="flex items-stretch"
                       key={index}
                     >
@@ -204,7 +213,11 @@ const TeachersPage = () => {
                             <div className="capitalize !ml-2 !py-2">
                               <div>
                                 {teacher.fullname}
-                                {` (${teacher.education ? handleEducation(teacher.education): "No diploma"})`}
+                                {` (${
+                                  teacher.education
+                                    ? handleEducation(teacher.education)
+                                    : "No diploma"
+                                })`}
                               </div>
                               <div>
                                 {teacher.teacherRole
